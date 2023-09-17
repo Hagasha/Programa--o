@@ -1,0 +1,13 @@
+body{
+    font-family: Helvetica;
+    text-align: center;
+    color:black;
+    background-color:darkmagenta;
+}
+
+body a{
+    color:gold;
+}
+body img{
+    border: 3px solid burlywood;
+}
