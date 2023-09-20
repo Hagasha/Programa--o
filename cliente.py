@@ -14,9 +14,15 @@ client_socket.connect((host, port))
 message = client_socket.recv(1024).decode()
 print(f"Servidor diz: {message}")
 
-# Envia uma mensagem para o servidor
-message_to_server = "Olá, servidor!"
-client_socket.send(message_to_server.encode())
+while True:
+    # Solicita ao usuário que insira uma mensagem
+    message_to_server = input("Digite uma mensagem para o servidor (ou 'sair' para encerrar): ")
+    
+    if message_to_server.lower() == 'sair':
+        break
+
+    # Envia a mensagem para o servidor
+    client_socket.send(message_to_server.encode())
 
 # Fecha a conexão com o servidor
 client_socket.close()

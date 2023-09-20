@@ -12,22 +12,23 @@ server_socket.bind((host, port))
 
 # Aguarda por conexões de clientes
 server_socket.listen(5)
-print(f"Servidor conectado em {host}:{port}")
+print("Aguardando conexão...")
 
 while True:
     # Aceita a conexão do cliente
     client_socket, addr = server_socket.accept()
-    print(f"Conexão recebida de {addr}")
+    print(f"Conexão efetuada em {addr}")
 
     # Envia uma mensagem de boas-vindas para o cliente
     message = "Bem-vindo ao servidor!"
     client_socket.send(message.encode())
 
-    # Recebe dados do cliente
-    data = client_socket.recv(1024).decode()
-    print(f"Cliente diz: {data}")
+    while True:
+        # Recebe dados do cliente
+        data = client_socket.recv(1024).decode()
+        if not data:
+            break
+        print(f"Cliente diz: {data}")
 
     # Fecha a conexão com o cliente
     client_socket.close()
-
-
