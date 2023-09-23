@@ -1,3 +1,6 @@
+#Grupo composto por Arthur Narciso, Matheus Pena, Rayan Diniz e Vinicíus Alves.
+
+#Importa o programa de rede socket
 import socket
 
 # Configuração do cliente
