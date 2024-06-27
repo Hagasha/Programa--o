@@ -1,7 +1,10 @@
-let fullName = "John Doe";
+let fullName;
+document.getElementById("mysubmit").onclick = function () {
+    fullName = document.getElementById("mytext").value;
+    document.getElementById("p1").textContent = `Seu nome é ${fullName}`;
+};
+
 let age = 25;
 let isMarried = false;
-
-document.getElementById("p1").textContent = `Your name is ${fullName}`;
-document.getElementById("p2").textContent = `You are ${age} years old`;
-document.getElementById("p3").textContent = `You are married: ${isMarried}`;
+document.getElementById("p2").textContent = `Você tem ${age} anos`;
+document.getElementById("p3").textContent = `Você é casado?: ${isMarried}`;
