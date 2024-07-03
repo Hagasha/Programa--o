@@ -1,0 +1,16 @@
+body{
+    background-color: #5e0a0a;
+    font-family: Verdana;
+    text-align: center
+}
+
+#meubotao{
+    font-size: 3em;
+    padding: 5px 25px;
+    border-radius: 5px;
+    position: relative
+}
+
+#minhalabel{
+    font-size: 10em;
+}
