@@ -1,25 +1,27 @@
-const meutexto = document.getElementById('meutexto');
-const meuenvio = document.getElementById('meuenvio');
-const meuresultado = document.getElementById('meuresultado');
-let age = 0;
+const myCheckBox = document.getElementById('myCheckBox');
+const visaBtn = document.getElementById('visaBtn');
+const masterCardBtn = document.getElementById('masterCardBtn');
+const payPalBtn = document.getElementById('payPalBtn');
+const subResult = document.getElementById('subResult');
+const paymentResult = document.getElementById('paymentResult');
 
-meuenvio.onclick = function(){
-    age = meutexto.value;
-    age = Number(age);
-
-    if (age >= 100) {
-    meuresultado.textContent = "Você é um centenário!";
-    }
-    else if (age == 0) {
-    meuresultado.textContent = "Você acabou de nascer, não pode acessar o site!";
-    }
-    else if (age >= 18) {
-    meuresultado.textContent = "Você pode acessar o site!";
-    }
-    else if(age < 0) {
-    meuresultado.textContent = "Sua idade não pode ser negativa!";
-    }
-    else {  
-    meuresultado.textContent = "Você deve ter mais de 18 anos para acessar o site!";
-    }
+mySubmit.onclick = function() {
+  if(myCheckBox.checked) {
+    subResult.textContent =`Your are subscribed!`;
+  }
+  else {
+    subResult.textContent =`Your are not subscribed!`;
+  }
+  if(visaBtn.checked) {
+    paymentResult.textContent =`You selected Visa!`;
+  }
+  else if(masterCardBtn.checked) {
+    paymentResult.textContent =`You selected MasterCard!`;
+  }
+  else if(payPalBtn.checked) {
+    paymentResult.textContent =`You selected PayPal!`;
+  }
+  else {
+    paymentResult.textContent =`You did not select any payment method!`;
+  }
 }

@@ -1,4 +1,8 @@
 body {
-    font-family: Lucida sans-serif;
+    font-family: Verdana;
     font-size: 2em;
+}
+
+#mysubmit {
+    font-size: 1em;
 }
