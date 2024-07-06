@@ -1,27 +1,12 @@
-const myCheckBox = document.getElementById('myCheckBox');
-const visaBtn = document.getElementById('visaBtn');
-const masterCardBtn = document.getElementById('masterCardBtn');
-const payPalBtn = document.getElementById('payPalBtn');
-const subResult = document.getElementById('subResult');
-const paymentResult = document.getElementById('paymentResult');
-
-mySubmit.onclick = function() {
-  if(myCheckBox.checked) {
-    subResult.textContent =`Your are subscribed!`;
-  }
-  else {
-    subResult.textContent =`Your are not subscribed!`;
-  }
-  if(visaBtn.checked) {
-    paymentResult.textContent =`You selected Visa!`;
-  }
-  else if(masterCardBtn.checked) {
-    paymentResult.textContent =`You selected MasterCard!`;
-  }
-  else if(payPalBtn.checked) {
-    paymentResult.textContent =`You selected PayPal!`;
-  }
-  else {
-    paymentResult.textContent =`You did not select any payment method!`;
-  }
-}
+//let age = 21;
+//let message = age >= 18 ? "you are an adult": "you are a minor";
+//console.log(message);
+//let time = 24;
+//let greeting = time < 12 ? "Good Morning": time < 18 ? "Good Afternoon": "Good Evening";
+//console.log(greeting);
+// let isStudent = false;
+// let message = isStudent ? "You are a student": "You aren't a student";
+// console.log(message);
+let purchaseAmount = 142;
+let discount = purchaseAmount >= 100 ? 10: 0;
+console.log(`Your total is ${purchaseAmount - purchaseAmount * (discount / 100)}`);
