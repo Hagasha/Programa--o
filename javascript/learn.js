@@ -1,12 +1,51 @@
-//let age = 21;
-//let message = age >= 18 ? "you are an adult": "you are a minor";
-//console.log(message);
-//let time = 24;
-//let greeting = time < 12 ? "Good Morning": time < 18 ? "Good Afternoon": "Good Evening";
-//console.log(greeting);
-// let isStudent = false;
-// let message = isStudent ? "You are a student": "You aren't a student";
-// console.log(message);
-let purchaseAmount = 142;
-let discount = purchaseAmount >= 100 ? 10: 0;
-console.log(`Your total is ${purchaseAmount - purchaseAmount * (discount / 100)}`);
+/* let day = 5;
+
+switch(day){
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    case 4:
+        console.log("Thursday");
+        break;
+    case 5: 
+        console.log("Friday");
+        break;
+    case 6: 
+        console.log("Saturday");
+        break;
+    case 7:
+        console.log("Sunday");
+        break;
+    default:    
+        console.log("Invalid day");
+        break;
+} */
+
+let testScore = 100;
+let letterGrade;
+
+switch(true){
+    case testScore >= 90:
+        letterGrade = "A";
+        break;
+    case testScore >= 80:
+        letterGrade = "B";
+        break;
+    case testScore >= 70:
+        letterGrade = "C";
+        break;
+    case testScore >= 60:
+        letterGrade = "D";
+        break;
+    default:        
+        letterGrade = "F";
+        break;
+}
+
+console.log(letterGrade);
