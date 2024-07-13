@@ -1,8 +1,14 @@
-const PI = 3.14;
+let loggedIn = false;
+let username;
+let password;
 
-if(PI !== "3.14"){
-    console.log("Isso não é Pi");
-}
-else{
-    console.log("Isso é Pi");
+while (!loggedIn) {
+    username = prompt("Digite seu nome de usuário");
+    password = prompt("Digite sua senha");
+
+    if (username === "admin" && password === "admin") {
+        loggedIn = true;
+    } else {
+        alert("Usuário ou senha inválidos");
+    }
 }
