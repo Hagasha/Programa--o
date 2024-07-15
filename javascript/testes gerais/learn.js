@@ -1,14 +1,8 @@
-let loggedIn = false;
-let username;
-let password;
-
-while (!loggedIn) {
-    username = prompt("Digite seu nome de usuário");
-    password = prompt("Digite sua senha");
-
-    if (username === "admin" && password === "admin") {
-        loggedIn = true;
-    } else {
-        alert("Usuário ou senha inválidos");
+for(let i = 1; i <= 20; i++){
+    if(i == 13){
+        continue; // usada para pular uma iteração
+    }
+    else{
+        console.log(i);
     }
 }
