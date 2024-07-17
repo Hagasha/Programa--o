@@ -1,12 +1,19 @@
-let username = window.prompt("What is your name?");
-let age = window.prompt("How old are you?");
-
-function happyBirthday(username, age){
-    console.log("Happy Birthday to you!");
-    console.log("Happy Birthday to you!");
-    console.log(`Happy Birthday dear ${username}!`);
-    console.log("Happy Birthday to you!");
-    console.log(`You are ${age} years old!`);
+function add(x, y) {
+    return x + y;
 }
-happyBirthday(username, age);
-
+function subtract(x, y) {
+    return x - y;
+}
+function multiply(x, y) {
+    return x * y;
+}
+function divide(x, y) {
+    return x / y;
+}
+function isEven(number) {
+    return number % 2 === 0 ? true : false;
+}
+function isValidEmail(email) {
+    return email.includes('@') ? true : false;
+}
+console.log(isValidEmail("hagasha2@gmail.com"));
