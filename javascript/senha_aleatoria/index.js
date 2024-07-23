@@ -10,7 +10,7 @@ function generatePassword() {
     const numberChars = '0123456789';
     const symbolChars = '!@#$%^&*()_+-=[]{}|;:,.<>?';
     let allowedChars = '';
-    
+
     allowedChars += (includeLowercase) ? lowercaseChars : '';
     allowedChars += (includeUppercase) ? uppercaseChars : '';
     allowedChars += (includeNumbers) ? numberChars : '';
@@ -30,7 +30,5 @@ function generatePassword() {
         const randomIndex = Math.floor(Math.random() * allowedChars.length);
         generatedPassword += allowedChars[randomIndex];
     }
-
-    // Exibir a senha gerada no elemento HTML com id 'senhaGerada'
     document.getElementById('senhaGerada').innerHTML = `Senha gerada: ${generatedPassword}`;
 }
