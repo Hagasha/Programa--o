@@ -1,14 +1,9 @@
-const ages = [16, 17, 18, 19, 20, 35]
-const adults = ages.filter(isAdult)
-const children = ages.filter(isChild)
+const prices = [5, 30, 10, 25, 15, 20];
 
-console.log(adults)
-console.log(children)
+const total = prices.reduce(sum);
 
-function isAdult(element) {
-  return element >= 18;
-}
+console.log(`$${total.toFixed(2)}`);
 
-function isChild(element) {
-  return element < 18;
-}
+function sum(acc, element){
+    return acc + element;
+} 
