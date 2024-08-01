@@ -1,22 +1,33 @@
-function carro(empresa, marca, modelo, ano, cor){
-    this.empresa = empresa;
-    this.marca = marca;
-    this.modelo = modelo;
-    this.ano = ano;
-    this.cor = cor;
+class Produto{
+    constructor(nome, preco){
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    mostrarProduto(){
+        console.log(`Produto: ${this.nome}`)
+        console.log(`Preço: R$${this.preco}`);
+    }
+
+    calcularTotal(taxas){
+        return this.preco +(this.preco * taxas);
+    }
 }
 
-const carro1 = new carro('Chevrolet', 'Cruze', 'LTZ', 2019, 'Preto');
-const carro2 = new carro('Fiat', 'Uno', 'Way', 2018, 'Branco');
+const taxas = 0.05
 
-console.log(carro1.empresa)
-console.log(carro1.marca)
-console.log(carro1.modelo)
-console.log(carro1.ano)
-console.log(carro1.cor)
+const produto1 = new Produto('Camiseta', 20.99);
+const produto2 = new Produto('Calça', 50.99);
+const produto3 = new Produto('Tênis', 199.99);
 
-console.log(carro2.empresa)
-console.log(carro2.marca)
-console.log(carro2.modelo)
-console.log(carro2.ano)
-console.log(carro2.cor)
+produto1.mostrarProduto(); 
+const total1 = produto1.calcularTotal(taxas);
+console.log(`O total com taxas é R$${total1.toFixed(2)}`); 
+
+produto2.mostrarProduto(); // O produto Calça custa R$51
+const total2 = produto2.calcularTotal(taxas);
+console.log(`O total com taxas é R$${total2.toFixed(2)}`);
+
+produto3.mostrarProduto(); // O produto Tênis custa R$200
+const total3 = produto3.calcularTotal(taxas);
+console.log(`O total com taxas é R$${total3.toFixed(2)}`);
