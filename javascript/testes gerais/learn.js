@@ -1,33 +1,47 @@
-class Produto{
-    constructor(nome, preco){
-        this.nome = nome;
-        this.preco = preco;
+/*class MathUtil{
+    static PI = 3.14159;
+
+    static getDiameter(radius){
+        return 2 * radius;
     }
 
-    mostrarProduto(){
-        console.log(`Produto: ${this.nome}`)
-        console.log(`Preço: R$${this.preco}`);
+    static getCircumference(radius){
+        return 2 * this.PI * radius;
     }
 
-    calcularTotal(taxas){
-        return this.preco +(this.preco * taxas);
+    static getArea(radius){
+        return this.PI * radius * radius;
     }
 }
 
-const taxas = 0.05
+console.log(MathUtil.PI);
+console.log(MathUtil.getDiameter(10));
+console.log(MathUtil.getCircumference(10));
+console.log(MathUtil.getArea(10));*/
 
-const produto1 = new Produto('Camiseta', 20.99);
-const produto2 = new Produto('Calça', 50.99);
-const produto3 = new Produto('Tênis', 199.99);
+class User{
+    static userCount = 0;
 
-produto1.mostrarProduto(); 
-const total1 = produto1.calcularTotal(taxas);
-console.log(`O total com taxas é R$${total1.toFixed(2)}`); 
+    constructor(username){
+        this.username = username;
+        User.userCount++;
+    }
+    static getUsername(){
+        console.log(`There are ${User.userCount} users`);
+    }
 
-produto2.mostrarProduto(); // O produto Calça custa R$51
-const total2 = produto2.calcularTotal(taxas);
-console.log(`O total com taxas é R$${total2.toFixed(2)}`);
+    sayHello(){
+        console.log(`Hello, my username is ${this.username}`);
+    }
 
-produto3.mostrarProduto(); // O produto Tênis custa R$200
-const total3 = produto3.calcularTotal(taxas);
-console.log(`O total com taxas é R$${total3.toFixed(2)}`);
+    
+}
+
+const user1 = new User('Hagasha');
+const user2 = new User('Lili');
+const user3 = new User('Mathz');
+
+user1.sayHello();
+user2.sayHello();
+user3.sayHello();
+User.getUsername();
