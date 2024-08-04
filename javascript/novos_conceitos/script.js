@@ -1,50 +1,51 @@
 class Animal{
-    alive = true;
-
-    eat(){
-        console.log(`${this.name} está comendo...`);
+    constructor(nome, idade){
+    this.nome = nome;
+    this.idade = idade;
     }
-    sleep(){
-        console.log(`${this.name} está dormindo...`);
+
+    move(velocidade){
+        console.log(`${this.nome} se moveu a ${velocidade} m/s`);
+    }
+}
+class Cachorro extends Animal{
+    constructor(nome, idade, velocidadecorrida){
+        super(nome, idade);
+        this.velocidadecorrida = velocidadecorrida;
+    }
+
+    correr(){
+        console.log(`${this.nome} consegue correr`);
+        super.move(this.velocidadecorrida);
     }
 }
 
-class Dog extends Animal{
-    name = 'Cachorro';
-    swim(){
-        console.log(`${this.name} está nadando...`);
+class Peixe extends Animal{
+    constructor(nome, idade, velocidadenado){
+        super(nome, idade);
+        this.velocidadenanado = velocidadenado;
+    }
+    nadar(){
+        console.log(`${this.nome} consegue nadar`);
+        super.move(this.velocidadenanado);
     }
 }
 
-class Cat extends Animal{
-    name = 'Gato';
-    climb(){
-        console.log(`${this.name} está escalando...`);
+    class Falcao extends Animal{
+    constructor(nome, idade, velocidadevoo){
+        super(nome, idade);
+        this.velocidadevoo = velocidadevoo;
+    }
+    voar(){
+        console.log(`${this.nome} consegue voar`);
+        super.move(this.velocidadevoo);
     }
 }
 
-class Bird extends Animal{
-    name = 'Pássaro';
-    fly(){
-        console.log(`${this.name} está voando...`);
-    }
-}
+const cachorro = new Cachorro('Rex', 5, 25);
+const peixe = new Peixe('Nemo', 2, 12);
+const falcao = new Falcao('Falcon', 3, 50);
 
-const dog = new Dog();
-const cat = new Cat();
-const bird = new Bird();
-
-console.log(dog.alive);
-dog.eat();
-dog.sleep();
-dog.swim();
-
-console.log(cat.alive);
-cat.eat();
-cat.sleep();
-cat.climb();
-
-console.log(bird.alive);
-bird.eat();
-bird.sleep();
-bird.fly();
+cachorro.correr();
+peixe.nadar();
+falcao.voar();
