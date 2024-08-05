@@ -1,40 +1,48 @@
-class Retangulo {
-    constructor(altura, largura) {
-        this.altura = altura;
-        this.largura = largura;
+class Pessoa{
+    constructor(nome, sobrenome, idade){
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.idade = idade;
     }
-
-    set largura(novaLargura) {
-        if (novaLargura > 0) {
-            this._largura = novaLargura;
-        } else {
-            console.error('Largura inválida');
+    set nome(novoNome){
+        if(typeof novoNome === "string" && novoNome.length > 0){
+            this._nome = novoNome;
+        }
+        else{
+            console.error("Nome inválido");
         }
     }
 
-    set altura(novaAltura) {
-        if (novaAltura > 0) {
-            this._altura = novaAltura;
-        } else {
-            console.error('Altura inválida');
+    set sobrenome(novoSobrenome){
+        if(typeof novoSobrenome === "string" && novoSobrenome.length > 0){
+            this._sobrenome = novoSobrenome;
+        }
+        else{
+            console.error("Sobrenome inválido");
         }
     }
 
-    get largura() {
-        return `${this._largura.toFixed(1)}cm`;
+    set idade(novaIdade){
+        if(typeof novaIdade === "number" && novaIdade >= 0){
+            this._idade = novaIdade;
+        }
+        else{
+            console.error("Idade inválida");
+        }
     }
-
-    get altura() {
-       return  `${this._altura.toFixed(1)} cm`;
+    get nome(){
+        return this._nome;
     }
-
-    get area() {
-        return `${(this._altura * this._largura).toFixed(1)}cm²`;
+    get sobrenome(){
+        return this._sobrenome;
+    }
+    get nomeCompleto(){
+        return this._nome + " " + this._sobrenome;
+    }
+    get idade(){
+        return this._idade;
     }
 }
-
-const retangulo = new Retangulo(3, 6);
-
-console.log(retangulo.altura);
-console.log(retangulo.largura); 
-console.log(retangulo.area);
+const pessoa = new Pessoa("Lucas", "Fernando", 20);
+console.log(pessoa.nomeCompleto);
+console.log(pessoa.idade);
