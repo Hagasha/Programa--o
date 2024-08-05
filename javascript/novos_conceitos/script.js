@@ -1,51 +1,40 @@
-class Animal{
-    constructor(nome, idade){
-    this.nome = nome;
-    this.idade = idade;
+class Retangulo {
+    constructor(altura, largura) {
+        this.altura = altura;
+        this.largura = largura;
     }
 
-    move(velocidade){
-        console.log(`${this.nome} se moveu a ${velocidade} m/s`);
-    }
-}
-class Cachorro extends Animal{
-    constructor(nome, idade, velocidadecorrida){
-        super(nome, idade);
-        this.velocidadecorrida = velocidadecorrida;
+    set largura(novaLargura) {
+        if (novaLargura > 0) {
+            this._largura = novaLargura;
+        } else {
+            console.error('Largura inválida');
+        }
     }
 
-    correr(){
-        console.log(`${this.nome} consegue correr`);
-        super.move(this.velocidadecorrida);
+    set altura(novaAltura) {
+        if (novaAltura > 0) {
+            this._altura = novaAltura;
+        } else {
+            console.error('Altura inválida');
+        }
     }
-}
 
-class Peixe extends Animal{
-    constructor(nome, idade, velocidadenado){
-        super(nome, idade);
-        this.velocidadenanado = velocidadenado;
+    get largura() {
+        return `${this._largura.toFixed(1)}cm`;
     }
-    nadar(){
-        console.log(`${this.nome} consegue nadar`);
-        super.move(this.velocidadenanado);
-    }
-}
 
-    class Falcao extends Animal{
-    constructor(nome, idade, velocidadevoo){
-        super(nome, idade);
-        this.velocidadevoo = velocidadevoo;
+    get altura() {
+       return  `${this._altura.toFixed(1)} cm`;
     }
-    voar(){
-        console.log(`${this.nome} consegue voar`);
-        super.move(this.velocidadevoo);
+
+    get area() {
+        return `${(this._altura * this._largura).toFixed(1)}cm²`;
     }
 }
 
-const cachorro = new Cachorro('Rex', 5, 25);
-const peixe = new Peixe('Nemo', 2, 12);
-const falcao = new Falcao('Falcon', 3, 50);
+const retangulo = new Retangulo(3, 6);
 
-cachorro.correr();
-peixe.nadar();
-falcao.voar();
+console.log(retangulo.altura);
+console.log(retangulo.largura); 
+console.log(retangulo.area);
