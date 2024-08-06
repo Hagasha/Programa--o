@@ -1,9 +1,21 @@
-// atribui elementos de arranjo para variáveis
+// Desestrutura os parâmetros de uma função
 
-const colors = ["red", "green", "blue", "black", "white"];
+function displayPerson({ nome, sobrenome, idade, profissão = 'Não informado' }) {
+  console.log(`Nome: ${nome} ${sobrenome}`);
+  console.log(`Idade: ${idade}`);
+    console.log(`Profissão: ${profissão}`);
+}
 
-const[firsColor, secondColor, thirdColor, ...restColors] = colors;
-console.log(firsColor); // red
-console.log(secondColor); // green
-console.log(thirdColor); // blue
-console.log(restColors); // ['black', 'white']
+const pessoa1 = {
+    nome: 'Luiz',
+    sobrenome: 'Miranda',
+    idade: 25,
+    profissão: 'Programador'
+};
+
+const pessoa2 = {
+    nome: 'Maria',
+    sobrenome: 'Oliveira',
+    idade: 55
+};
+displayPerson(pessoa2);
