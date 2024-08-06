@@ -3,7 +3,7 @@
 function displayPerson({ nome, sobrenome, idade, profissão = 'Não informado' }) {
   console.log(`Nome: ${nome} ${sobrenome}`);
   console.log(`Idade: ${idade}`);
-    console.log(`Profissão: ${profissão}`);
+  console.log(`Profissão: ${profissão}`);
 }
 
 const pessoa1 = {
@@ -18,4 +18,5 @@ const pessoa2 = {
     sobrenome: 'Oliveira',
     idade: 55
 };
+
 displayPerson(pessoa2);
