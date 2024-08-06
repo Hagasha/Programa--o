@@ -1,6 +1,9 @@
-// trocar 2 elementos de um arranjo
+// atribui elementos de arranjo para variáveis
 
-const colors = ["red", "green", "blue", "yellow", "pink"];
+const colors = ["red", "green", "blue", "black", "white"];
 
-[colors[4], colors[0]] = [colors[0], colors[4]];
-console.table(colors);
+const[firsColor, secondColor, thirdColor, ...restColors] = colors;
+console.log(firsColor); // red
+console.log(secondColor); // green
+console.log(thirdColor); // blue
+console.log(restColors); // ['black', 'white']
