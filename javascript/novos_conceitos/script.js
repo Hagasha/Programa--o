@@ -6,4 +6,10 @@ const fruits =[{name: "Apple", color: "red", calories: 95},
   {name:"Strawberry", color: "red", calories: 45},
 ];
 
-const yellowFruits = fruits.filter(fruit => fruit.color === "yellow");
+const calories = fruits.reduce((acc, fruit) => {
+  acc[fruit.color] = acc[fruit.color] || 0;
+  acc[fruit.color] += fruit.calories;
+  return acc;
+}, {});
+
+console.log(calories);
