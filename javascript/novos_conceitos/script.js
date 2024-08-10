@@ -1,9 +1,12 @@
-const people = [
-  { name: 'John', age: 20 },
-  { name: 'Jane', age: 30 },
-  { name: 'Jim', age: 40 },
-  { name: 'Jill', age: 50 },
-]
-people.sort((a, b) => a.name.localeCompare(b.name)) // para comparar nome se usa essa função
+const cards = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
 
-console.log(people)
+shuffle(cards);
+
+console.table(cards);
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+} // Função para embaralhar as cartas do baralho
