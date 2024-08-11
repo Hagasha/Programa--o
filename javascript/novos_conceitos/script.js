@@ -1,12 +1,16 @@
-const cards = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth();
+const day = date.getDate();
+const hours = date.getHours();
+const minutes = date.getMinutes();
+const seconds = date.getSeconds();
+const dayWeek = date.getDay();
 
-shuffle(cards);
-
-console.table(cards);
-
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-} // Função para embaralhar as cartas do baralho
+console.log(year);
+console.log(month);
+console.log(day);
+console.log(hours);
+console.log(minutes);
+console.log(seconds);
+console.log(dayWeek);
