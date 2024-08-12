@@ -1,16 +1,22 @@
-const date = new Date();
-const year = date.getFullYear();
-const month = date.getMonth();
-const day = date.getDate();
-const hours = date.getHours();
-const minutes = date.getMinutes();
-const seconds = date.getSeconds();
-const dayWeek = date.getDay();
+function createGame(){
+let score = 0;
 
-console.log(year);
-console.log(month);
-console.log(day);
-console.log(hours);
-console.log(minutes);
-console.log(seconds);
-console.log(dayWeek);
+function addScore(points) {
+  score+= points;
+  console.log(`+${points} pontos!`);
+}
+function removeScore(points) {
+  score-= points;
+  console.log(`-${points} pontos!`);
+}
+function getScore() {
+  return score;
+}
+return {addScore, removeScore, getScore};
+}
+
+const game = createGame();
+game.addScore(10);
+game.addScore(20);
+game.removeScore(5);
+console.log(`A pontuação final é de ${game.getScore()} pontos!`); 
