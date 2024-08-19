@@ -1,22 +1,9 @@
-function createGame(){
-let score = 0;
+let timeoutId;
 
-function addScore(points) {
-  score+= points;
-  console.log(`+${points} pontos!`);
-}
-function removeScore(points) {
-  score-= points;
-  console.log(`-${points} pontos!`);
-}
-function getScore() {
-  return score;
-}
-return {addScore, removeScore, getScore};
+function startTimer(){
+  timeoutId = setTimeout(() => window.alert('Tempo esgotado!'), 3000);
 }
 
-const game = createGame();
-game.addScore(10);
-game.addScore(20);
-game.removeScore(5);
-console.log(`A pontuação final é de ${game.getScore()} pontos!`); 
+function stopTimer(){
+  clearTimeout(timeoutId);
+}
