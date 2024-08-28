@@ -1,0 +1,10 @@
+adjective1 = input("Enter an adjective: ")
+noun1 = input("Enter a noun: ")
+adjective2 = input("Enter an adjective: ")
+adjective3 = input("Enter an adjective: ")
+noun2 = input("Enter a noun: ")
+
+print(f"Today i went to a {adjective1} zoo.")
+print(f"I saw a {noun1} jumping up and down in its tree.")
+print(f"{noun1} was {adjective2} and {adjective3}.")
+print(f"I got some peanuts and passed them through the cage to a gigantic gray {noun2} towering above my head.")
