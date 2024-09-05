@@ -1,9 +1,12 @@
-let timeoutId;
-
-function startTimer(){
-  timeoutId = setTimeout(() => window.alert('Tempo esgotado!'), 3000);
+function func1(callback){
+    setTimeout(() => {console.log("Task 1");
+                    callback()}, 3000);
 }
 
-function stopTimer(){
-  clearTimeout(timeoutId);
+function func2(){
+    console.log("Task 2");
+    console.log("Task 3");
+    console.log("Task 4");
 }
+
+func1(func2);
