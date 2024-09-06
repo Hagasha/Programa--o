@@ -1,21 +1,11 @@
-temp  = 20
-is_sunny = False
+username = input("Enter username: ")
+username = username.strip() 
 
-if temp >= 28 and is_sunny:
-    print("it's Hot outside 🥵")
-    print("It's Sunny ☀️")
-elif temp <= 0 and is_sunny:
-    print("It's Cold outside 🥶")
-    print("It's Sunny ☀️")
-elif 28 > temp > 0 and is_sunny:
-    print("It's Warm outside 🙂")
-    print("It's Sunny ☀️")
-elif temp >= 28 and not is_sunny:
-    print("it's Hot outside 🥵")
-    print("It's Cloudy ☁️")
-elif temp <= 0 and not is_sunny:
-    print("It's Cold outside 🥶")
-    print("It's Cloudy ☁️")
-elif 28 > temp > 0 and not is_sunny:
-    print("It's Warm outside 🙂")
-    print("It's Cloudy ☁️")
+if len(username) > 12:
+    print("Username must be a maximum of 12 characters long")
+elif not username.find(" ") == -1:
+    print("Username cannot contain spaces")
+elif not username.isalpha():
+    print("Username can only contain alphabets")
+else:
+    print("Your username is: ", username)
