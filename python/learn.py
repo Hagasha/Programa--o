@@ -1,5 +1,4 @@
-for i in range(1, 21):
-    if i == 13:
-        break
-    else:
-        print(i)
+for x in range(3):
+    for y in range(1, 10):
+        print(y, end='/')
+    print()
