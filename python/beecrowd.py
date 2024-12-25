@@ -1,7 +1,3 @@
-import math
-a, b = map(float, input().split())
-c, d = map(float, input().split())
-e = math.sqrt(pow(c - a, 2) + pow(d - b, 2))
-math.sqrt(e)
-
-print(f"{e:.4f}")
+x = int(input())
+a = (60 * x) / 30
+print(f"{a:.0f} minutos")
