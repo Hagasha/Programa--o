@@ -1,8 +1,10 @@
 class Personagem:
-    def __init__(self, nome, vida, nivel):
+    def __init__(self, nome, vida, nivel, habilidade = None, tipo = None):
         self.nome = nome
         self.vida = vida
         self.nivel = nivel
+        self.habilidade = habilidade
+        self.tipo = tipo
     
     def get_nome(self):
         return self.nome
@@ -11,25 +13,20 @@ class Personagem:
     def get_nivel(self):
         return self.nivel
     def exibir_detalhes(self):
-        return f'Nome: {self.nome}, Vida: {self.vida}, Nível: {self.nivel}'
+        detalhes = f'\n{type(self).__name__} \nNome: {self.nome} \nVida: {self.vida} \nNível: {self.nivel}'
+        if self.habilidade:
+            detalhes += f'\nHabilidade: {self.habilidade}'
+        if self.tipo:
+            detalhes += f'\nTipo: {self.tipo}\n'
+        return detalhes
     
 class Heroi(Personagem):
     def __init__(self, nome, vida, nivel, habilidade):
-        super().__init__(nome, vida, nivel)
-        self.habilidade = habilidade
-    def get_habilidade(self):
-        return self.habilidade
-    def exibir_detalhes(self):
-        return f'Nome: {self.nome}, Vida: {self.vida}, Nível: {self.nivel}, Habilidade: {self.habilidade}'
+        super().__init__(nome, vida, nivel, habilidade=habilidade)
     
 class Inimigo(Personagem):
     def __init__(self, nome, vida, nivel, tipo):
-        super().__init__(nome, vida, nivel)
-        self.tipo = tipo
-    def get_tipo(self):
-        return self.tipo
-    def exibir_detalhes(self):
-        return f'Nome: {self.nome}, Vida: {self.vida}, Nível: {self.nivel}, Tipo: {self.tipo}'
+        super().__init__(nome, vida, nivel, tipo=tipo)
     
 
 heroi = Heroi('Superman', 100, 1, 'Voar')
